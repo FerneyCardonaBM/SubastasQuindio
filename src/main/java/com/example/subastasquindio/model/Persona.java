@@ -6,7 +6,7 @@ public abstract class Persona {
     private String cedula;
     private int edad;
     private String telefono;
-    private Usuario usuario;
+    //private Usuario usuario;
 
     public Persona() {
     }
@@ -52,13 +52,13 @@ public abstract class Persona {
         this.telefono = telefono;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
-    }
+   // public Usuario getUsuario() {
+    //    return usuario;
+  //  }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
+  //  public void setUsuario(Usuario usuario) {
+      //  this.usuario = usuario;
+ //   }
 
 
 }

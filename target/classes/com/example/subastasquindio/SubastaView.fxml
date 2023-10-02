@@ -9,29 +9,20 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.control.SplitPane?>
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
   <tabs>
-    <Tab text="Anuncios">
+    <Tab text="Productos">
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="360.0" prefWidth="600.0">
-               <children>
-
-                               <Pane layoutX="90.0" layoutY="14.0" prefHeight="208.0" prefWidth="447.0" style="-fx-border-color: #000000;">
-                                   <children>
-                                       <ImageView fitHeight="91.0" fitWidth="208.0" layoutX="28.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" />
-                                       <Label layoutX="280.0" layoutY="29.0" prefHeight="18.0" prefWidth="92.0" text="Carro BMW" />
-                                       <Text layoutX="27.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modelo 6 serie 333 Color Blanco Modelo 6 serie 333 Color Blanco Modelo 6 serie 333 Color Blanco Modelo 6 serie 333 Color Blanco " wrappingWidth="393.9830722808838" />
-                                       <Label layoutX="28.0" layoutY="124.0" prefHeight="18.0" prefWidth="92.0" text="Descripcion:">
-                                           <font>
-                                               <Font size="16.0" />
-                                           </font>
-                                       </Label>
-                                       <Label layoutX="253.0" layoutY="60.0" prefHeight="18.0" prefWidth="147.0" text="Precio: $109557332" />
-                                   </children>
-                               </Pane>
-
-
-               </children></AnchorPane>
+            <children>
+                <SplitPane layoutX="6.0" layoutY="6.0" orientation="VERTICAL" prefHeight="542.0" prefWidth="790.0">
+                    <items>
+                        <fx:include source="ProductoView.fxml" />
+                    </items>
+                </SplitPane>
+            </children>
+        </AnchorPane>
       </content>
     </Tab>
     <Tab text="Iniciar Sesion">

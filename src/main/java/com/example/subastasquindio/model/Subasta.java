@@ -1,7 +1,7 @@
 package com.example.subastasquindio.model;
 
-import com.example.subastasquindio.exceptions.CompradorException;
-import com.example.subastasquindio.exceptions.UsuarioException;
+import com.example.subastasquindio.exceptions.ProductoException;
+import com.example.subastasquindio.model.Enums.TipoProducto;
 import com.example.subastasquindio.model.services.ISubastaService;
 
 import java.util.ArrayList;
@@ -12,11 +12,24 @@ public class Subasta implements ISubastaService {
      ArrayList<Comprador> listaCompradores   = new ArrayList<>();;
      ArrayList<Anunciante> listaAnunciantes  = new ArrayList<>();;
 
+    ArrayList<Producto> listaProductos  = new ArrayList<>();;
+
+
     public Subasta() {
 
     }
 
     // Getters y Setters para los atributos
+
+    public ArrayList<Producto> getListaProductos() {
+        return listaProductos;
+    }
+
+    public void setListaProductos(ArrayList<Producto> listaProductos) {
+        this.listaProductos = listaProductos;
+    }
+
+
     public ArrayList<Usuario> getListaUsuarios() {
         return listaUsuarios;
     }
@@ -42,63 +55,59 @@ public class Subasta implements ISubastaService {
     }
 
     @Override
-    public Comprador crearComprador(String nombre, String apellido, String cedula, int edad, String telefono, String direccion) throws CompradorException {
-        Comprador nuevoComprador = null;
-        boolean compradorExiste = verificarCompradorExistente(cedula);
-        if(compradorExiste){
-            throw new CompradorException("El comprador con cedula: "+cedula+" ya existe");
+    public Producto crearProducto(String id, String nombre, TipoProducto tipoProducto) throws ProductoException {
+        Producto nuevoProducto = null;
+        boolean productoExiste = verificarProductoExistente(id);
+        if(productoExiste){
+            throw new ProductoException("El producto con id: "+id+" ya existe");
         }else{
-            nuevoComprador = new Comprador();
-            nuevoComprador.setNombre(nombre);
-            nuevoComprador.setApellido(apellido);
-            nuevoComprador.setCedula(cedula);
-            nuevoComprador.setEdad(edad);
-            nuevoComprador.setTelefono(telefono);
-            nuevoComprador.setDireccion(direccion);
+            nuevoProducto = new Producto();
+            nuevoProducto.setId(id);
+            nuevoProducto.setNombre(nombre);
+            nuevoProducto.setTipoProducto(tipoProducto);
 
-            getListaCompradores().add(nuevoComprador);
+
+            getListaProductos().add(nuevoProducto);
         }
-        return nuevoComprador;
+        return nuevoProducto;
     }
 
-    public void agregarComprador(Comprador nuevoComprador) throws CompradorException{
-        getListaCompradores().add(nuevoComprador);
+    public void agregarProducto(Producto nuevoProducto) throws ProductoException{
+        getListaProductos().add(nuevoProducto);
     }
 
     @Override
-    public boolean actualizarComprador(String cedulaActual, Comprador comprador) throws CompradorException {
-        Comprador compradorActual = obtenerComprador(cedulaActual);
-        if(compradorActual == null)
-            throw new CompradorException("El comprador a actualizar no existe");
+    public boolean actualizarProducto(String idActual, Producto producto) throws ProductoException {
+        Producto productoActual = obtenerProducto(idActual);
+        if(productoActual == null)
+            throw new ProductoException("El producto a actualizar no existe");
         else{
-            compradorActual.setNombre(comprador.getNombre());
-            compradorActual.setApellido(comprador.getApellido());
-            compradorActual.setCedula(comprador.getCedula());
-            compradorActual.setTelefono(comprador.getTelefono());
-            compradorActual.setEdad(comprador.getEdad());
-            compradorActual.setDireccion(comprador.getDireccion());
+            productoActual.setId(producto.getId());
+            productoActual.setNombre(producto.getNombre());
+            productoActual.setTipoProducto(producto.getTipoProducto());
+
             return true;
         }
     }
 
     @Override
-    public Boolean eliminarComprador(String cedula) throws CompradorException {
-        Comprador comprador = null;
+    public Boolean eliminarProducto(String id) throws ProductoException {
+        Producto producto = null;
         boolean flagExiste = false;
-        comprador = obtenerComprador(cedula);
-        if(comprador == null)
-            throw new CompradorException("El comprador a eliminar no existe");
+        producto = obtenerProducto(id);
+        if(producto == null)
+            throw new ProductoException("El producto a eliminar no existe");
         else{
-            getListaCompradores().remove(comprador);
+            getListaProductos().remove(producto);
             flagExiste = true;
         }
         return flagExiste;
     }
 
     @Override
-    public boolean verificarCompradorExistente(String cedula) throws CompradorException {
-        if(compradorExiste(cedula)){
-            throw new CompradorException("El comprador con cedula: "+cedula+" ya existe");
+    public boolean verificarProductoExistente(String id) throws ProductoException {
+        if(productoExiste(id)){
+            throw new ProductoException("El producto con id: "+id+" ya existe");
         }else{
             return false;
         }
@@ -106,31 +115,31 @@ public class Subasta implements ISubastaService {
 
 
     @Override
-    public Comprador obtenerComprador(String cedula) {
-        Comprador compradorEncontrado = null;
-        for (Comprador comprador : getListaCompradores()) {
-            if(comprador.getCedula().equalsIgnoreCase(cedula)){
-                compradorEncontrado = comprador;
+    public Producto obtenerProducto(String id) {
+        Producto productoEncontrado = null;
+        for (Producto producto : getListaProductos()) {
+            if(producto.getId().equalsIgnoreCase(id)){
+                productoEncontrado = producto;
                 break;
             }
         }
-        return compradorEncontrado;
+        return productoEncontrado;
     }
 
     @Override
-    public ArrayList<Comprador> obtenerCompradores() {
-        return getListaCompradores();
+    public ArrayList<Producto> obtenerProductos() {
+        return getListaProductos();
     }
 
-    public boolean compradorExiste(String cedula) {
-        boolean compradorEncontrado = false;
-        for (Comprador comprador : getListaCompradores()) {
-            if(comprador.getCedula().equalsIgnoreCase(cedula)){
-                compradorEncontrado = true;
+    public boolean productoExiste(String id) {
+        boolean productoEncontrado = false;
+        for (Producto producto : getListaProductos()) {
+            if(producto.getId().equalsIgnoreCase(id)){
+                productoEncontrado = true;
                 break;
             }
         }
-        return compradorEncontrado;
+        return productoEncontrado;
     }
 
 }

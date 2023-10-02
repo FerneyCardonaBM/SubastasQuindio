@@ -1,9 +1,9 @@
 package com.example.subastasquindio.mapping.mappers;
-import com.example.subastasquindio.mapping.dto.CompradorDto;
-import com.example.subastasquindio.model.Comprador;
+
+import com.example.subastasquindio.mapping.dto.ProductoDto;
+import com.example.subastasquindio.model.Producto;
 import org.mapstruct.IterableMapping;
 import org.mapstruct.Mapper;
-
 import org.mapstruct.Named;
 import org.mapstruct.factory.Mappers;
 
@@ -13,14 +13,11 @@ import java.util.List;
 public interface SubastaMapper {
     SubastaMapper INSTANCE = Mappers.getMapper(SubastaMapper.class);
 
-    @Named("compradorToCompradorDto")
-    CompradorDto compradorToCompradorDto(CompradorDto compradorDto);
+    @Named("productoToProductoDto1")
+    ProductoDto productoToProductoDto1(Producto producto);
 
-    Comprador compradorDtoToComprador(CompradorDto compradorDto);
+    Producto productoDtoToProducto1(ProductoDto productoDto);
 
-    @IterableMapping(qualifiedByName = "compradorToCompradorDto")
-    List<CompradorDto> getCompradoresDto(List<Comprador> listComprador);
-
-
-
+    @IterableMapping(qualifiedByName = "productoToProductoDto1")
+    List<ProductoDto> getListProductosDto1(List<Producto> listProductos);
 }
