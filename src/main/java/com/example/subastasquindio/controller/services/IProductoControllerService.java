@@ -13,4 +13,6 @@ public interface IProductoControllerService {
     boolean eliminarProducto(String id);
 
     boolean actualizarProducto(String idActual,ProductoDto productoDto);
+
+    /// registrarAcciones
 }

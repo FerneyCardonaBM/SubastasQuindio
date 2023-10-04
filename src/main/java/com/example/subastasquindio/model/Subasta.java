@@ -11,16 +11,12 @@ public class Subasta implements ISubastaService {
      ArrayList<Usuario> listaUsuarios  = new ArrayList<>();;
      ArrayList<Comprador> listaCompradores   = new ArrayList<>();;
      ArrayList<Anunciante> listaAnunciantes  = new ArrayList<>();;
-
     ArrayList<Producto> listaProductos  = new ArrayList<>();;
-
 
     public Subasta() {
 
     }
-
     // Getters y Setters para los atributos
-
     public ArrayList<Producto> getListaProductos() {
         return listaProductos;
     }

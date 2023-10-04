@@ -9,7 +9,6 @@ import java.util.List;
 
 public interface IModelFactoryService {
 
-
     List<ProductoDto> obtenerProductos();
     boolean agregarProducto(ProductoDto productoDto);
 

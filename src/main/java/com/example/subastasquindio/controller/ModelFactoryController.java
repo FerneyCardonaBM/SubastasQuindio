@@ -64,7 +64,7 @@ public class ModelFactoryController implements IModelFactoryService {
         try {
             flagExiste = getSubasta().eliminarProducto(id);
         } catch (ProductoException e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
         }
         return flagExiste;

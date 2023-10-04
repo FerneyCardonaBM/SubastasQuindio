@@ -147,6 +147,7 @@ public class ProductoViewController {
                 listaProductosDto.add(productoDto);
                 mostrarMensaje("Notificación Producto", "Producto creado", "El Producto se ha creado con éxito", Alert.AlertType.INFORMATION);
                 limpiarCamposProducto();
+              //  registrarAcciones("",);
             } else {
                 mostrarMensaje("Notificación Producto", "Producto no creado", "El Producto no se ha creado con éxito", Alert.AlertType.ERROR);
             }
@@ -243,4 +244,11 @@ public class ProductoViewController {
         Optional<ButtonType> action = alert.showAndWait();
         return action.isPresent() && action.get() == ButtonType.OK;
     }
+
+   /* public void registrarAcciones(String mensaje){
+
+        productoControllerService.registrarAcciones()
+
+    }*/
+
 }

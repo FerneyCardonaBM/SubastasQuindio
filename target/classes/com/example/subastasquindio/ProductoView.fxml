@@ -32,9 +32,9 @@
                     <children>
                         <TableView fx:id="tableProductos" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="711.0">
                             <columns>
-                                <TableColumn fx:id="tcId" prefWidth="75.0" text="Id" />
-                                <TableColumn fx:id="tcNombre" prefWidth="75.0" text="Nombre" />
-                                <TableColumn fx:id="tcTipoProducto" prefWidth="75.0" text="Tipo Producto" />
+                                <TableColumn fx:id="tcId" prefWidth="88.0" text="Id" />
+                                <TableColumn fx:id="tcNombre" prefWidth="96.0" text="Nombre" />
+                                <TableColumn fx:id="tcTipoProducto" prefWidth="105.0" text="Tipo Producto" />
 
 
                             </columns>
