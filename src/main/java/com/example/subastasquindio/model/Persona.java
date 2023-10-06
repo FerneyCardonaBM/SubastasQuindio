@@ -7,6 +7,7 @@ public abstract class Persona {
     private int edad;
     private String telefono;
     //private Usuario usuario;
+    //Eso es una prueba
 
     public Persona() {
     }
