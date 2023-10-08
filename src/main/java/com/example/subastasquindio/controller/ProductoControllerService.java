@@ -30,5 +30,9 @@ public class ProductoControllerService implements IProductoControllerService {
     public boolean actualizarProducto(String idActual, ProductoDto productoDto) {
         return modelFactoryController.actualizarProducto(idActual, productoDto);
     }
+    @Override
+    public void registrarAcciones(String mensaje, int nivel, String accion) {
+        modelFactoryController.registrarAccionesSistema(mensaje, nivel, accion);
+    }
 
 }

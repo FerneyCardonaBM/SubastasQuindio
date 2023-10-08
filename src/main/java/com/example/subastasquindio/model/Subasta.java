@@ -16,6 +16,8 @@ public class Subasta implements ISubastaService {
     public Subasta() {
 
     }
+
+
     // Getters y Setters para los atributos
     public ArrayList<Producto> getListaProductos() {
         return listaProductos;

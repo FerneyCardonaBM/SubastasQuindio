@@ -3,7 +3,11 @@ package com.example.subastasquindio.model;
 
 import com.example.subastasquindio.model.Enums.TipoProducto;
 
-public class Producto {
+import java.io.Serializable;
+
+public class Producto  implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private String id;
     private String nombre;
     private TipoProducto tipoProducto;

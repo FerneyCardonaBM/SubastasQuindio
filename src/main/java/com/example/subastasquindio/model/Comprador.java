@@ -1,8 +1,9 @@
 package com.example.subastasquindio.model;
 
-import java.util.ArrayList;
+import java.io.Serializable;
 
-public class Comprador extends Persona {
+public class Comprador extends Persona implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     private String direccion;
    // ArrayList<Puja> listaPujas = new ArrayList<Puja>();;

@@ -1,6 +1,7 @@
 package com.example.subastasquindio.mapping.mappers;
 
 import com.example.subastasquindio.mapping.dto.ProductoDto;
+import com.example.subastasquindio.model.Enums.TipoProducto;
 import com.example.subastasquindio.model.Producto;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +9,7 @@ import java.util.List;
 /*
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-10-02T14:09:29-0500",
+    date = "2023-10-07T11:20:27-0500",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 20.0.2 (Oracle Corporation)"
 )
 */
@@ -22,11 +23,13 @@ public class SubastaMapperImpl implements SubastaMapper {
 
         String id = null;
         String nombre = null;
+        TipoProducto tipoProducto = null;
 
         id = producto.getId();
         nombre = producto.getNombre();
+        tipoProducto = producto.getTipoProducto();
 
-        ProductoDto productoDto = new ProductoDto( id, nombre );
+        ProductoDto productoDto = new ProductoDto( id, nombre, tipoProducto );
 
         return productoDto;
     }
@@ -40,6 +43,7 @@ public class SubastaMapperImpl implements SubastaMapper {
         Producto producto = new Producto();
 
         producto.setNombre( productoDto.nombre() );
+        producto.setTipoProducto( productoDto.tipoProducto() );
         producto.setId( productoDto.id() );
 
         return producto;

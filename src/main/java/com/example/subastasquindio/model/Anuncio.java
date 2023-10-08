@@ -1,6 +1,10 @@
 package com.example.subastasquindio.model;
 
-public class Anuncio {
+import java.io.Serializable;
+
+public class Anuncio implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private Producto producto;
     private String descripcion;
     private String foto;

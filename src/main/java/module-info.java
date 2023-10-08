@@ -1,9 +1,12 @@
 module com.example.SubastasQuindio {
     requires javafx.controls;
     requires javafx.fxml;
-    requires javafx.graphics;
+    requires org.controlsfx.controls;
     requires org.mapstruct;
-    requires  org.mapstruct.processor;
+    requires java.desktop;
+    requires java.logging;
+
+
 
     opens com.example.subastasquindio to javafx.fxml;
     opens com.example.subastasquindio.model to javafx.graphics;

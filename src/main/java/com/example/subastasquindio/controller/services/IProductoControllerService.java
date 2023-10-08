@@ -1,6 +1,5 @@
 package com.example.subastasquindio.controller.services;
 
-import com.example.subastasquindio.mapping.dto.CompradorDto;
 import com.example.subastasquindio.mapping.dto.ProductoDto;
 
 import java.util.List;
@@ -14,5 +13,6 @@ public interface IProductoControllerService {
 
     boolean actualizarProducto(String idActual,ProductoDto productoDto);
 
-    /// registrarAcciones
+    void registrarAcciones(String mensaje, int nivel, String accion);
+
 }

@@ -1,6 +1,9 @@
 package com.example.subastasquindio.model;
 
-public class Puja {
+import java.io.Serializable;
+
+public class Puja implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String codigo;
     private Double ofertaInicial;
     private String fechaPuja;

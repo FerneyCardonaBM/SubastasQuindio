@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="20.0.2" class="java.beans.XMLDecoder">
+ <object class="com.example.subastasquindio.model.Subasta" id="Subasta0">
+  <void property="listaProductos">
+   <void method="add">
+    <object class="com.example.subastasquindio.model.Producto">
+     <void property="id">
+      <string>ariassadsad</string>
+     </void>
+     <void property="nombre">
+      <string>juan 2sdasdsa</string>
+     </void>
+     <void property="tipoProducto">
+      <object class="java.lang.Enum" method="valueOf">
+       <class>com.example.subastasquindio.model.Enums.TipoProducto</class>
+       <string>BIENRAIZ</string>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="com.example.subastasquindio.model.Producto">
+     <void property="id">
+      <string>sadsad</string>
+     </void>
+     <void property="nombre">
+      <string>asdsad</string>
+     </void>
+     <void property="tipoProducto">
+      <object class="java.lang.Enum" method="valueOf">
+       <class>com.example.subastasquindio.model.Enums.TipoProducto</class>
+       <string>VEHICULOS</string>
+      </object>
+     </void>
+    </object>
+   </void>
+  </void>
+ </object>
+</java>
